@@ -78,14 +78,14 @@ export const WeatherCard = ({ weather }: WeatherCardProps) => {
       transition={{ duration: 0.5 }}
       className="w-full max-w-4xl mx-auto"
     >
-      <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white overflow-hidden">
+      <Card className="bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-50 text-slate-900 border-slate-200 dark:bg-white/10 dark:text-white dark:border-white/20 overflow-hidden backdrop-blur-md">
         <div className="p-6">
           {/* Main Weather Info */}
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-3xl font-bold mb-1">{weather.name}</h2>
-              <p className="text-white/80">{weather.sys.country}</p>
-              <p className="text-white/60 text-sm mt-1">
+              <p className="text-slate-600 dark:text-white/80">{weather.sys.country}</p>
+              <p className="text-slate-500 dark:text-white/60 text-sm mt-1">
                 {getWeatherDescription(weather.weather)}
               </p>
             </div>
@@ -94,13 +94,13 @@ export const WeatherCard = ({ weather }: WeatherCardProps) => {
                 <img
                   src={WeatherAPI.getWeatherIcon(weather.weather[0].icon, 'large')}
                   alt={weather.weather[0].description}
-                  className="w-20 h-20"
+                  className="w-20 h-20 drop-shadow"
                 />
-                <div className="text-5xl font-bold">
+                <div className="text-5xl font-bold text-slate-900 dark:text-white">
                   {formatTemperature(weather.main.temp, unit)}
                 </div>
               </div>
-              <div className="text-sm text-white/70 mt-2">
+              <div className="text-sm text-slate-600 dark:text-white/70 mt-2">
                 H: {formatTemperature(weather.main.temp_max, unit)} / 
                 L: {formatTemperature(weather.main.temp_min, unit)}
               </div>
@@ -115,15 +115,15 @@ export const WeatherCard = ({ weather }: WeatherCardProps) => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/5 rounded-lg p-4 backdrop-blur-sm"
+                className="rounded-lg p-4 backdrop-blur-sm bg-white/70 ring-1 ring-sky-100 shadow-sm hover:shadow-md transition dark:bg-white/5 dark:ring-white/10"
               >
                 <div className="flex items-center gap-3">
                   <stat.icon className={`w-5 h-5 ${stat.color}`} />
                   <div>
-                    <p className="text-white/60 text-xs uppercase tracking-wide">
+                    <p className="text-slate-500 dark:text-white/60 text-xs uppercase tracking-wide">
                       {stat.label}
                     </p>
-                    <p className="text-white font-semibold">
+                    <p className="text-slate-900 dark:text-white font-semibold">
                       {stat.value}
                     </p>
                   </div>
@@ -138,15 +138,15 @@ export const WeatherCard = ({ weather }: WeatherCardProps) => {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-white/5 rounded-lg p-4 backdrop-blur-sm"
+              className="rounded-lg p-4 backdrop-blur-sm bg-white/70 ring-1 ring-sky-100 shadow-sm dark:bg-white/5 dark:ring-white/10"
             >
               <div className="flex items-center gap-3">
                 <Sunrise className="w-5 h-5 text-orange-400" />
                 <div>
-                  <p className="text-white/60 text-xs uppercase tracking-wide">
+                  <p className="text-slate-500 dark:text-white/60 text-xs uppercase tracking-wide">
                     Sunrise
                   </p>
-                  <p className="text-white font-semibold">
+                  <p className="text-slate-900 dark:text-white font-semibold">
                     {formatTime(weather.sys.sunrise, weather.timezone)}
                   </p>
                 </div>
@@ -157,15 +157,15 @@ export const WeatherCard = ({ weather }: WeatherCardProps) => {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.7 }}
-              className="bg-white/5 rounded-lg p-4 backdrop-blur-sm"
+              className="rounded-lg p-4 backdrop-blur-sm bg-white/70 ring-1 ring-sky-100 shadow-sm dark:bg-white/5 dark:ring-white/10"
             >
               <div className="flex items-center gap-3">
                 <Sunset className="w-5 h-5 text-orange-400" />
                 <div>
-                  <p className="text-white/60 text-xs uppercase tracking-wide">
+                  <p className="text-slate-500 dark:text-white/60 text-xs uppercase tracking-wide">
                     Sunset
                   </p>
-                  <p className="text-white font-semibold">
+                  <p className="text-slate-900 dark:text-white font-semibold">
                     {formatTime(weather.sys.sunset, weather.timezone)}
                   </p>
                 </div>
@@ -179,15 +179,15 @@ export const WeatherCard = ({ weather }: WeatherCardProps) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="mt-4 bg-white/5 rounded-lg p-4 backdrop-blur-sm"
+              className="mt-4 rounded-lg p-4 backdrop-blur-sm bg-white/70 ring-1 ring-sky-100 shadow-sm dark:bg-white/5 dark:ring-white/10"
             >
               <div className="flex items-center gap-3">
                 <Umbrella className="w-5 h-5 text-blue-400" />
                 <div>
-                  <p className="text-white/60 text-xs uppercase tracking-wide">
+                  <p className="text-slate-500 dark:text-white/60 text-xs uppercase tracking-wide">
                     Precipitation
                   </p>
-                  <p className="text-white font-semibold">
+                  <p className="text-slate-900 dark:text-white font-semibold">
                     {weather.rain?.['1h'] && `${weather.rain['1h']}mm rain (1h)`}
                     {weather.rain?.['3h'] && `${weather.rain['3h']}mm rain (3h)`}
                     {weather.snow?.['1h'] && `${weather.snow['1h']}mm snow (1h)`}

@@ -10,9 +10,21 @@ import { WeatherBackground } from '@/components/WeatherBackground';
 import { ErrorMessage } from '@/components/ErrorMessage';
 import { LoadingState } from '@/components/LoadingState';
 import { SettingsPanel } from '@/components/SettingsPanel';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export default function Home() {
   const { currentWeather, forecast, loading } = useWeather();
+
+  const goBack = () => {
+    if (typeof window !== 'undefined') {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = window.location.pathname;
+      }
+    }
+  };
 
   const WelcomeAnimation = () => (
     <motion.div
@@ -60,6 +72,15 @@ export default function Home() {
     <WeatherBackground>
       <div className="container mx-auto px-4 py-8 min-h-screen">
         <SettingsPanel />
+        <Button
+          onClick={goBack}
+          className="fixed top-4 left-4 z-40 bg-white/80 dark:bg-white/10 text-slate-700 dark:text-white border-slate-200 dark:border-white/20 hover:bg-white shadow-md"
+          variant="outline"
+          size="sm"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
         
         <div className="flex flex-col items-center justify-center min-h-screen">
           {!currentWeather && !loading && <WelcomeAnimation />}
