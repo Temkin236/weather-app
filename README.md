@@ -1,4 +1,4 @@
-# Weather App (Next.js + Tailwind)
+# Weather App (Next.js + Tailwind) deployed link is https://weather-app-opfn.vercel.app/
 
 A responsive, animated weather application powered by the OpenWeather API. Built with Next.js (App Router), TypeScript, Tailwind CSS, and Radix UI primitives. Includes rich UI polish: weather-aware gradients, glassmorphism surfaces, subtle motion, dark/light themes, search suggestions, geolocation, and a 5-day/24-hour forecast.
 
