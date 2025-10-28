@@ -148,7 +148,7 @@ npm run start
 
 ## License
 
-MIT <img width="1407" height="986" alt="image" src="https://github.com/user-attachments/assets/81a4e513-dee8-4291-a309-b01e854bfc5c" />
+MIT <img width="1407" height="986" alt="image" src="https://github.com/user-attachments/assets/81a4e513-dee8-4291-a309-b01e854bfc5c" />   enjoy
 
 
 ## Acknowledgements
