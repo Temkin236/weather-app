@@ -29,7 +29,7 @@ A responsive, animated weather application powered by the OpenWeather API. Built
 
 1) Install dependencies
 
-```bash
+``bash
 npm install
 ```
 
