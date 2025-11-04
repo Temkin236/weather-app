@@ -146,7 +146,7 @@ npm run start
 - Receiving 401/429 errors? Verify key activation, usage, and wait before retrying
 - Search returns no cities? Try broader queries or click a suggestion (coordinates preferred)
 
-## License
+# License
 
 MIT <img width="1407" height="986" alt="image" src="https://github.com/user-attachments/assets/81a4e513-dee8-4291-a309-b01e854bfc5c" />   enjoy
 
